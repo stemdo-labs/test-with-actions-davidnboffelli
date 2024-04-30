@@ -25,8 +25,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
 
+      - name: Install markdown lint
+        run: npm install remark-cli remark-preset-lint-consistent
       - name: Run markdown lint
-        run: |
-          npm install remark-preset-lint-consistent
-          npx remark . --use remark-present-lint-consistent --frail
-# remark-cli
+        run: npx remark . --use remark-present-lint-consistent --frail
